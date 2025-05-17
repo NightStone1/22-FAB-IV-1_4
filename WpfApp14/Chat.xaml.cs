@@ -151,7 +151,20 @@ namespace WpfApp14
                 }
             }
         }
-
+        // Обработка клавиши отправить
+        private void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            SendMessage();
+        }
+        // Обработка клавиши enter
+        private void MessageTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter && !Keyboard.IsKeyDown(Key.LeftShift) && !Keyboard.IsKeyDown(Key.RightShift))
+            {
+                SendMessage();
+                e.Handled = true; // Предотвращаем перенос строки
+            }
+        }
         // Добавление сообщения в чат
         private void AddMessageToChat(string message)
         {
