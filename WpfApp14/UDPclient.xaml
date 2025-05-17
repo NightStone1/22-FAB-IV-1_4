@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp14.UDPclient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp14"
+        mc:Ignorable="d"
+        Title="UDPclient" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="225"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btn_DisConnect" Content="Включить/выключить сервер" Grid.Row="0" Margin="10,25,10,0" Click="btn_DisConnect_Click"/>
+        <Button x:Name="btn_openDir" Content="Открыть директорию сервера" Grid.Row="1" Margin="10,25,10,0" Click="btn_openDir_Click"/>        
+        <Button x:Name="btn_chooseFiles" Content="Выбрать файлы для отправки" Grid.Row="0" Grid.Column="3" Margin="10,25,10,0" Click="btn_chooseFiles_Click"/>
+        <Button x:Name="btn_sendFiles" Content="Отправить файлы" Grid.Row="1" Grid.Column="3" Margin="10,25,10,0" Click="btn_sendFiles_Click"/>
+        <ListView Visibility="Hidden" Grid.Row="2" Grid.Column="2" x:Name="sendList" MouseDoubleClick="sendList_MouseDoubleClick">
+        </ListView>
+        <StatusBar Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+            <StatusBarItem x:Name="statusBar" Content="" FontFamily="Calibri" FontSize="20"/>
+        </StatusBar>
+    </Grid>
+</Window>
